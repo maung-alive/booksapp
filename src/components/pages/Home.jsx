@@ -2,56 +2,99 @@ import React, { useState } from 'react'
 import SearchBar from '../subcomponents/SearchBar';
 import { FaArrowCircleRight, FaStar, FaStarHalf } from 'react-icons/fa';
 import AuthorListItem from '../subcomponents/AuthorListItem';
+import Notice from '../subcomponents/Notice';
 
 export default function Home() {
     let [ query, setQuery ] = useState('');
 
     const authors = [
         {
-            rank: 1,
-            name: 'Jue',
-            birth: '1-2-1993',
-            dead: false,
-            published: 21
+          img: "/author1.jpg",
+          rank: 1,
+          name: "J.K. Rowling",
+          birth: "1965",
+          dead: null,
+          published: 62
         },
         {
-            rank: 2,
-            name: 'J.K Rolling',
-            birth: '1-2-1967',
-            dead: '13-2-2035',
-            published: 19
+          img: "/author2.jpg", 
+          rank: 2,
+          name: "Stephen King",
+          birth: "1947",
+          dead: null,
+          published: 54
         },
         {
-            rank: 3,
-            name: 'Shakesphere',
-            birth: '1-2-1821',
-            dead: '3-5-1880',
-            published: 2231
+          img: "/author3.jpg",
+          rank: 3,
+          name: "Nora Roberts",
+          birth: "1950",
+          dead: null,
+          published: 215
         },
         {
-            rank: 4,
-            name: 'wer',
-            birth: '1-2-1993',
-            dead: false,
-            published: 21
+          img: "/author4.jpg",
+          rank: 4,
+          name: "Dean Koontz",
+          birth: "1945",
+          dead: null,
+          published: 105
         },
-    ]
-
+        {
+          img: "/author5.jpg",
+          rank: 5,
+          name: "Danielle Steel",
+          birth: "1947",
+          dead: null,
+          published: 179
+        },
+        {
+          img: "/author6.jpg",
+          rank: 6,
+          name: "Dr. Seuss",
+          birth: "1904",
+          dead: "1991",
+          published: 44
+        },
+        {
+          img: "/author7.jpg",
+          rank: 7,
+          name: "Enid Blyton",
+          birth: "1897",
+          dead: "1968",
+          published: 600
+        },
+        {
+          img: "/author8.jpg",
+          rank: 8,
+          name: "Jeffrey Archer",
+          birth: "1940",
+          dead: null,
+          published: 37
+        },
+        {
+          img: "/author9.jpg", 
+          rank: 9,
+          name: "Paulo Coelho",
+          birth: "1947",
+          dead: null,
+          published: 39
+        },
+        {
+          img: "/author10.jpg",
+          rank: 10,
+          name: "Barbara Cartland",
+          birth: "1901",
+          dead: "2000",
+          published: 723
+        }
+    ];
+      
     return (
-        <div className="w-full bg-slate-600 h-auto px-3 md:px-8 py-2 md:py-4">
+        <div className="w-full bg-slate-600 h-auto px-3 lg:px-8 py-2 lg:py-4">
             <SearchBar query={query} setQuery={setQuery} />
 
-            <div className="relative w-full h-auto bg-blue-950 px-5 md:px-10 py-2 md:py-4 my-4 md:my-8 rounded-xl md:rounded-3xl flex justify-center items-center">
-                <div>
-                    <p className="text-xl md:text-4xl py-3 font-medium text-white font-josefin">We are awarded top writer every month</p>
-                    <p className="text-sm md:text-lg py-2 leading-9 font-medium text-gray-300 font-dosis">Lorem ipsum dolor sit amet consectetur adipisicing de chat en garcons, redema ewl elit.</p>
-                    <div className="flex gap-x-2 py-2 md:gap-x-3 md:py-4">
-                        <button className="w-auto h-auto px-2 md:px-4 py-1 md:py-2 bg-blue-900 hover:bg-transparent border-2 border-blue-900 hover:border-blue-800 text-white font-medium rounded md:rounded-md">This month winners</button>
-                        <button className="w-auto h-auto px-2 md:px-4 py-1 md:py-2 bg-transparent hover:bg-red-900 border-2 border-red-800 hover:border-red-900 text-white font-medium rounded md:rounded-md">close</button>
-                    </div>
-                </div>
-                <img src="/clip-education.png" alt="clip-education" className="w-[125px] h-[125px] md:w-[250px] md:h-[250px] object-cover" />
-            </div>
+            <Notice />
 
             <hr className="block md:hidden my-3" />
 

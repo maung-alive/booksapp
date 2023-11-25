@@ -1,9 +1,15 @@
+import classNames from 'classnames'
 import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 
-export default function ASide() {
+export default function ASide({ showAside, setShowAside }) {
   return (
-    <aside className="hidden md:block fixed top-0 right-0 h-screen w-[22rem] bg-slate-900">
+    <aside className={classNames({
+        "md:block md:translate-x-0 fixed top-0 right-0 h-screen w-[22rem] bg-slate-900": true,
+        "duration-500": true,
+        "translate-x-full": !showAside,
+        "z-10 translate-x-0": showAside
+    })}>
         <div className="px-3 py-3">
             <div className='bg-slate-700 rounded-xl w-full py-3 px-2'>
                 <p className="text-2xl text-white py-4 px-2 font-medium">Detail</p>
