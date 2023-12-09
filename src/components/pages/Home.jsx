@@ -3,6 +3,7 @@ import SearchBar from '../subcomponents/SearchBar';
 import { FaArrowCircleRight, FaStar, FaStarHalf } from 'react-icons/fa';
 import AuthorListItem from '../subcomponents/AuthorListItem';
 import Notice from '../subcomponents/Notice';
+import BookItem from '../subcomponents/BookItem';
 
 export default function Home() {
     let [ query, setQuery ] = useState('');
@@ -91,49 +92,21 @@ export default function Home() {
     ];
       
     return (
-        <div className="w-full bg-slate-600 h-auto px-3 lg:px-8 py-2 lg:py-4">
+        <div className="w-full bg-gray-100 dark:bg-slate-600 h-auto px-3 lg:px-8 py-2 lg:py-4">
             <SearchBar query={query} setQuery={setQuery} />
 
             <Notice />
 
             <hr className="block md:hidden my-3" />
 
-            <h3 className="text-3xl text-white font-bold font-nunito flex justify-between items-center">Top <span className="hover:text-blue-950"><FaArrowCircleRight /></span></h3>
+            <h3 className="text-3xl text-black dark:text-white font-bold font-nunito flex justify-between items-center">Top <span className="hover:text-blue-950 hover:scale-90 duration-100"><FaArrowCircleRight /></span></h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 justify-evenly mt-6 gap-x-3">
-                <div className="w-full h-auto px-5 md:px-10 py-2 flex gap-2">
-                    <img src="/bookcv2.jpg" alt="Book Cover" className="w-[100px] h-[150px] object-cover" />
-                    <div className="pt-3">
-                        <p className="text-2xl py-2 font-medium text-white font-mukta">Book</p>
-                        <p className="text-md text-gray-400 font-josefins">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                        <div className="flex gap-x-2 mt-2">
-                            <FaStar className="text-yellow-400" />
-                            <FaStar className="text-yellow-400" />
-                            <FaStar className="text-yellow-400" />
-                            <FaStar className="text-yellow-400" />
-                            <FaStarHalf className="text-yellow-400" />
-                            <span className="text-gray-300 -mt-1 pl-3">(4.5)</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-full h-auto px-5 md:px-10 py-2 flex gap-2">
-                    <img src="/bookcv2.jpg" alt="Book Cover" className="w-[100px] h-[150px] object-cover" />
-                    <div className="pt-3">
-                        <p className="text-2xl py-2 font-medium text-white font-mukta">Book</p>
-                        <p className="text-md text-gray-400 font-josefins">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <div className="flex gap-x-2 mt-2">
-                            <FaStar className="text-yellow-400" />
-                            <FaStar className="text-yellow-400" />
-                            <FaStar className="text-yellow-400" />
-                            <FaStar className="text-yellow-400" />
-                            <FaStarHalf className="text-yellow-400" />
-                            <span className="text-gray-300 -mt-1 pl-3">(4.7)</span>
-                        </div>
-                    </div>
-                </div>
+              <BookItem />
+              <BookItem />
             </div>
 
-            <h3 className="text-3xl text-white font-bold font-nunito flex justify-between items-center mt-7">Top <span className="hover:text-blue-950"><FaArrowCircleRight /></span></h3>
+            <h3 className="text-3xl text-black dark:text-white font-bold font-nunito flex justify-between items-center mt-7">Top <span className="hover:text-blue-950 hover:scale-90 duration-100"><FaArrowCircleRight /></span></h3>
 
             <div className="mt-7">
                 {authors.map(i => <AuthorListItem {...i} /> )}
