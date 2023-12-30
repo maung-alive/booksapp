@@ -7,6 +7,8 @@ This project is inspired (or) copy from dribbble. original link below.
 Responsive design is done...
 ** Light Mode keep going **
 
+[Live Preview](https://maung-alive.github.io/booksapp/)
+
 ## Todo 🤞
 
 I will create full book app using DRF (django rest framework) or express.js
